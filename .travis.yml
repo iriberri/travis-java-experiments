@@ -2,8 +2,8 @@ language: node_js
 node_js: 7.5
 
 jdk:
- - oraclejdk7
- - oraclejdk8
+ - openjdk7
+ - openjdk8
 
 before_install:
 - wget dist.neo4j.org/neo4j-community-3.0.6-unix.tar.gz
