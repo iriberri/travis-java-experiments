@@ -1,11 +1,8 @@
 language: node_js
 
 node_js:
-    - "0.11"
-    - "0.10"
-
-jdk:
-    - oraclejdk7  # needed for local Neo4j 2.0+
+    - 7.4
+    - 7.5
 
 env:
     # test across multiple versions of Neo4j:
