@@ -1,0 +1,13 @@
+language: node_js
+node_js: 7.5
+
+before_install:
+- wget dist.neo4j.org/neo4j-community-3.0.6-unix.tar.gz
+- tar -xzf neo4j-community-3.0.6-unix.tar.gz
+- neo4j-community-3.0.6/bin/neo4j start
+
+
+script:
+- yarn test,
+
+dist: precise
