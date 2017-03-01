@@ -1,5 +1,7 @@
 language: ruby
 
+sudo: required
+
 matrix:
   fast_finish: true
 
