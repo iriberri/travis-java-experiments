@@ -1,20 +1,18 @@
-language: node_js
+language: ruby
 
-node_js:
-    - 7.4
-    - 7.5
+matrix:
+  fast_finish: true
 
 env:
     # test across multiple versions of Neo4j:
     - NEO4J_VERSION="3.0.6"
     - NEO4J_VERSION="2.3.9"
-
-
-before_install:
-    # install Neo4j locally:
-    - wget dist.neo4j.org/neo4j-community-$NEO4J_VERSION-unix.tar.gz
-    - tar -xzf neo4j-community-$NEO4J_VERSION-unix.tar.gz
-    - neo4j-community-$NEO4J_VERSION/bin/neo4j start
+    - NEO4J_VERSION="2.3.sss9"
+    - NEO4J_VERSION="2.dd3.9"
 
 install:
-- echo "hola"
+- if [ "${NEO4J_VERSION}" = "3.0.6" ]; then sleep 60; fi
+- if [ "${NEO4J_VERSION}" = "2.3.9" ]; then sleep 180; fi
+- if [ "${NEO4J_VERSION}" = "2.3.sss9" ]; then sleep 65; fi
+- if [ "${NEO4J_VERSION}" = "2.dd3.9" ]; then sleep 10; fi
+- locate mysqlclient
